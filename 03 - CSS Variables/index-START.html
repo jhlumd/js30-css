@@ -70,12 +70,10 @@
       const unit = e.target.dataset.unit || "";
 
       document.documentElement.style.setProperty(`--${variable}`, val + unit);
-      
     }
 
     inputs.forEach(input => input.addEventListener("change", handleUpdate));
     inputs.forEach(input => input.addEventListener("mousemove", handleUpdate));
-
   </script>
 
 </body>
