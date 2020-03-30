@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
 </head>
+
 <body>
-<canvas id="draw" width="800" height="800"></canvas>
+  <canvas id="draw" width="800" height="800"></canvas>
+</body>
+
 <script>
+  const canvas = document.querySelector("#draw");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
 </script>
 
 <style>
@@ -15,5 +24,4 @@
   }
 </style>
 
-</body>
 </html>
