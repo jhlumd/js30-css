@@ -138,10 +138,6 @@
       quasi aspernatur quas odio nihil? Veniam amet reiciendis blanditiis quis reprehenderit repudiandae neque, ab
       ducimus, odit excepturi voluptate saepe ipsam. Voluptatem eum error voluptas porro officiis, amet! Molestias,
       fugit, ut! Tempore non magnam, amet, facere ducimus accusantium eos veritatis neque.</p>
-
-
-
-
   </div>
 
   <script>
@@ -151,14 +147,29 @@
         var context = this, args = arguments;
         var later = function () {
           timeout = null;
-          if (!immediate) func.apply(context, args);
+          if (!immediate) {
+            // console.log("called by later");
+            func.apply(context, args);
+          }
         };
+        // console.log(!!timeout);
         var callNow = immediate && !timeout;
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
+        if (callNow) {
+          // console.log("called by callNow");
+          func.apply(context, args);
+        }
       };
     }
+
+    const sliderImages = document.querySelectorAll(".slide-in");
+
+    function checkSlide(e) {
+      console.count(e);
+    }
+
+    window.addEventListener("scroll", debounce(checkSlide));
 
   </script>
 
