@@ -218,8 +218,7 @@
       return `${hours}${minutes}:${seconds}`;
     }
 
-    const vidList = document.querySelector(".videos");
-    const listItems = Array.from(vidList.children);
+    const listItems = Array.from(document.querySelectorAll("[data-time]"));
 
     // const listOfSecs = listItems.map(item => convertToSecs(item.dataset.time));
     // const totalSecs = listOfSecs.reduce((acc, val) => acc + val);
