@@ -221,10 +221,12 @@
     const vidList = document.querySelector(".videos");
     const listItems = Array.from(vidList.children);
 
-    const totalSeconds = listItems.map(item => convertToSecs(item.dataset.time));
-    const allTotal = totalSeconds.reduce((acc, val) => acc + val);
-    
-    console.log(convertToTS(allTotal));
+    // const listOfSecs = listItems.map(item => convertToSecs(item.dataset.time));
+    // const totalSecs = listOfSecs.reduce((acc, val) => acc + val);
+
+    const totalSecs = listItems.reduce((acc, val) => acc + convertToSecs(val.dataset.time), 0);
+
+    console.log(convertToTS(totalSecs));
     
   </script>
 </body>
