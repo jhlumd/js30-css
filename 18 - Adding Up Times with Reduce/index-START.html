@@ -185,7 +185,47 @@
   </ul>
 
   <script>
-    // code
+    function convertToSecs(str) {
+      const units = str.split(":");
+
+      let hours, mins, secs;
+      if (units.length === 3) {
+        const [hh, mm, ss] = units;
+        hours = parseInt(hh, 10);
+        mins = parseInt(mm, 10);
+        secs = parseInt(ss, 10);
+      } else if (units.length === 2) {
+        const [mm, ss] = units;
+        hours = 0;
+        mins = parseInt(mm, 10);
+        secs = parseInt(ss, 10);
+      } else {
+        return "Timestamp error";
+      }
+
+      return hours * 3600 + mins * 60 + secs;
+    }
+
+    function convertToTS(num) {
+      let seconds = Math.floor(num % 60);
+      let minutes = Math.floor((num / 60) % 60);
+      let hours = Math.floor(num / 3600);
+
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      hours = hours < 1 ? "" : hours + ":";
+
+      return `${hours}${minutes}:${seconds}`;
+    }
+
+    const vidList = document.querySelector(".videos");
+    const listItems = Array.from(vidList.children);
+
+    const totalSeconds = listItems.map(item => convertToSecs(item.dataset.time));
+    const allTotal = totalSeconds.reduce((acc, val) => acc + val);
+    
+    console.log(convertToTS(allTotal));
+    
   </script>
 </body>
 
