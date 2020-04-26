@@ -40,9 +40,35 @@
   }
 </style>
 
-<button></button>
+<button>ONLY ONCE!!</button>
+
 <script>
+  const divs = document.querySelectorAll("div");
+  const button = document.querySelector("button");
+
+  function logText(e) {
+    // e.stopPropagation();
+    console.log("this: " + this.classList.value);
+    console.log("curTar: " + e.currentTarget.classList.value);
+    console.log("target: " + e.target.classList.value);
+    console.log("-------");
+    
+  }
+
+  // document.body.addEventListener("click", logText);
+  divs.forEach(div => div.addEventListener("click", logText, {
+    capture: false,
+    once: false,
+    // passive: true
+  }));
+
+  button.addEventListener("click", () => {
+    console.log("Button Clicked!!");
+  }, {
+    once: true,
+  });
 
 </script>
+
 </body>
 </html>
