@@ -252,9 +252,7 @@
   }
 
   function handleLeave(e) {
-    const { currentTarget } = e;
-    currentTarget.classList.remove("trigger-enter", "trigger-enter-active");
-
+    e.currentTarget.classList.remove("trigger-enter", "trigger-enter-active");
     background.classList.remove("open");
   }
 
