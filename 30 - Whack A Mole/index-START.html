@@ -75,7 +75,7 @@
   function bonk(e) {
     if (!e.isTrusted) return;
     scoreBoard.textContent++;
-    e.currentTarget.parentElement.classList.remove("up");
+    e.currentTarget.parentNode.classList.remove("up");
   }
 
   moles.forEach(mole => mole.addEventListener("click", bonk));
