@@ -32,9 +32,16 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 .container {
   display:flex;
   border: 1rem solid mistyrose;
-  /* height: 100vh; */
 }
 
 .box {
-  flex:1;
+  flex: 1;
+}
+
+.box2 {
+  flex: 2;
+}
+
+.box5 {
+  flex: 3;
 }
