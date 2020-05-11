@@ -11,8 +11,8 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   color:white;
   font-size: 50px;
   text-align: center;
-  text-shadow:4px 4px 0 rgba(0,0,0,0.1);
-  padding:10px;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+  padding: 10px;
 }
 
 /* Colours for each box */
@@ -34,11 +34,12 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 }
 
 .box1 {
-  flex:10 5 400px;
+  /* flex-basis: 400px;
+  flex-grow: 10;
+  flex-shrink: 5; */
+  flex: 10 5 400px;
 }
 
 .box2 {
-  flex:1 1 400px;
+  flex: 1 1 400px;
 }
-
-
