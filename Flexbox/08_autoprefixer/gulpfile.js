@@ -1,12 +1,12 @@
-var gulp = require("gulp");
-var autoprefixer = require("gulp-autoprefixer");
+import { task, src, dest, watch } from "gulp";
+import autoprefixer from "gulp-autoprefixer";
 
-gulp.task("styles", function () {
-  gulp.src("css/styles.css")
+task("styles", function () {
+  src("css/styles.css")
     .pipe(autoprefixer())
-    .pipe(gulp.dest("build"));
+    .pipe(dest("build"));
 });
 
-gulp.task("watch", function () {
-  gulp.watch("css/styles.css", ["styles"]);
+task("watch", function () {
+  watch("css/styles.css", ["styles"]);
 });
