@@ -1,5 +1,7 @@
-import { task, src, dest, watch } from "gulp";
-import autoprefixer from "gulp-autoprefixer";
+const gulp = require("gulp");
+const autoprefixer = require("gulp-autoprefixer");
+
+const { task, src, dest, watch } = gulp;
 
 task("styles", function () {
   src("css/styles.css")
