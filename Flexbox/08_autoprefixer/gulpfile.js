@@ -1,7 +1,5 @@
-const gulp = require("gulp");
+const { task, src, dest, watch } = require("gulp");
 const autoprefixer = require("gulp-autoprefixer");
-
-const { task, src, dest, watch } = gulp;
 
 task("styles", function () {
   src("css/styles.css")
