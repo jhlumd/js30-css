@@ -45,8 +45,8 @@ a:hover {
 /* our first flex item */
 .slider-nav li {
   flex:2; /* THis is flex 'item' -ish */
-  text-align: center;    /* item center, default is stretch */
   display:flex; /* This is flex 'container' -ish */
+  text-align: center;    /* item center, default is stretch */
 }
 
 .slider-nav .arrow {
@@ -54,13 +54,13 @@ a:hover {
 }
 
 .arrow a {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .slider-nav a {
-  flex-basis:100%;
   display:flex;
   align-items:center;
+  flex-basis:100%;
   /*We want to stretch as well as center*/
 }
 
