@@ -34,3 +34,12 @@ a {
 
 /* Flexbox Starts Here: */
 
+.elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.item {
+  flex: 0 1 calc(33.33333% - 20px);
+}
