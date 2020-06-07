@@ -168,10 +168,7 @@
     }
 
     const digits = Array.from({ length: 50 }, () => [randNum(4), randNum(4)])
-      .concat([
-        [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1],
-        [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]
-      ]);
+      .concat(Array.from({ length: 12 }, () => [1, 1]));
     const imageMarkups = digits.map(generateImages).join("");
     gallery.innerHTML = imageMarkups;
 
