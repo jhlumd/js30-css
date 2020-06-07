@@ -9,16 +9,6 @@
 </head>
 
 <body>
-
-  <!-- Flipping the direction of columns -->
-
-  <script>
-    function flip(e) {
-      const flipper = document.querySelector('.flipper');
-      flipper.classList.toggle('flip');
-    }
-  </script>
-
   <button onClick="flip()">Flip It</button>
   <div class="flipper">
     <div class="item">1</div>
@@ -35,7 +25,24 @@
   </div>
 
   <style>
+    .flipper {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    }
+
+    .flipper.flip {
+      grid-template-columns: 1fr;
+    }
   </style>
+
+  <!-- Flipping the direction of columns -->
+  <script>
+    const flipper = document.querySelector('.flipper');
+    function flip() {
+      flipper.classList.toggle('flip');
+    }
+  </script>
 </body>
 
 </html>
